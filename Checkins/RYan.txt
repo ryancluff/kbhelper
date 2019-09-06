@@ -1,0 +1,32 @@
+Request type: 1X
+
+Ryan --- 000.000.0000
+Username: Default | Password: None or Not Specified
+Customer authorizes only themselves for pickup of the device.
+
+Customer has reported the following issues: no known issues.
+There were no issues verified at Knowledge Bar.
+Customer has requested the following actions: fff.
+We are running diagnostic tests on the device which were quoted free.
+There is no eligible warranty, or no warranty applies to the requested repairs.
+
+Customer understands our data loss policy, and declines data backup for this device.
+Customer declines Anti-Virus bundle for this device.
+
+Total cost: 
+$0.00 for Diagnostic tests 
+Subtotal: $0.00 | Tax: $0.00 | Total: $0.00
+
+Technician will contact customer no later than 8PM on Thursday September 14, 2017.
+This repair order was originally created by: rcluff
+
+Recieved items: 
+hhhh
+
+
+
+
+
+
+Signature:__________________________________________________________
+
