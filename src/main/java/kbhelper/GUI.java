@@ -7,9 +7,13 @@ import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.LinkedList;
 import java.util.List;
+import 
 
 import javax.swing.ComboBoxModel;
 import javax.swing.DefaultComboBoxModel;
@@ -32,24 +36,18 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
-import components.queue.Queue;
-import components.simplewriter.SimpleWriter;
-import components.simplewriter.SimpleWriter1L;
-import components.xmltree.XMLTree;
-import components.xmltree.XMLTree1;
+// Created by Ryan Cluff
 
-//Created by Clinton Stamper and finished by Ryan Cluff
-
-public class gui extends JFrame implements ActionListener {
+public class GUI extends JFrame implements ActionListener {
 	
 	private final boolean debug = false;
 	public static boolean dispose = false;
-	private final String version = "2.6.2";
+	private final String version = "2.6.3";
 
 	private static final long serialVersionUID = 4043046839186108654L;
 	private final JPanel contentPane;
 	
-	private final asteaDownGui adGui;
+	private final AsteaDownGui adGui;
 	private final JTextField titleMicrocenter;
 	private final JTextField customerName;
 	private final JFormattedTextField primaryPhone;
@@ -98,7 +96,7 @@ public class gui extends JFrame implements ActionListener {
 	private String lastDaysToBenchValue = "";
 	
 	// config variables
-	private final XMLTree configInputFile = new XMLTree1("Config/config.xml");
+	private final XMLTree configInputFile = new XMLTree1("config/config.xml");
 	private List<Service> services = new ArrayList<Service>();
 	private List<String> osList = new ArrayList<String>();
 	private List<Service> backupList = new ArrayList<Service>();
@@ -118,9 +116,9 @@ public class gui extends JFrame implements ActionListener {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					gui frame = new gui();
+					GUI frame = new GUI();
 					frame.setVisible(true);
-					asteaDownGui adGui = new asteaDownGui();
+					AsteaDownGui adGui = new AsteaDownGui();
 					adGui.setVisible(false);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -131,10 +129,10 @@ public class gui extends JFrame implements ActionListener {
 	/**
 	 * Create the frame.
 	 */
-	public gui() {
+	public GUI() {
 		importConfig(configInputFile);
 		setTitle("Knowledge Bar Assistant | Version " + version);
-		setIconImage(Toolkit.getDefaultToolkit().getImage(gui.class.getResource("/images/logo.png")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(GUI.class.getResource("/images/logo.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 10, 350, 1000);
 		contentPane = new JPanel();
@@ -142,7 +140,7 @@ public class gui extends JFrame implements ActionListener {
 		contentPane.setLayout(null);
 		setContentPane(contentPane);
 		
-		adGui = new asteaDownGui();
+		adGui = new AsteaDownGui();
 
 		titleMicrocenter = new JTextField();
 		titleMicrocenter.setEditable(false);
@@ -1132,9 +1130,9 @@ public class gui extends JFrame implements ActionListener {
 		
 		if (this.asteaDown.isSelected()) {
 			result += "\nRecieved items: \n";
-			Queue<String> recievedList = this.adGui.getRecievedList();
-			for (int i = 0; i < recievedList.length(); i++) {
-				result += recievedList.dequeue() + "\n";
+			LinkedList<String> recievedList = this.adGui.getRecievedList();
+			for (int i = 0; i < recievedList.size(); i++) {
+				result += recievedList.removeFirst() + "\n";
 			}
 			result += "\n\n\n\n\n\n";
 			result += "Signature:__________________________________________________________\n";
@@ -1692,8 +1690,8 @@ public class gui extends JFrame implements ActionListener {
 	
 	private void generateTextFile(String contents) {
 		String customerName = this.customerName.getText();
-		SimpleWriter out = new SimpleWriter1L("Checkins/" + customerName + ".txt");
-		out.println(contents);
+		BufferedWriter out = new BufferedWriter(new FileWriter("Checkins/" + customerName + ".txt"));
+		out.write(contents);
 		out.close();
 	}
 	

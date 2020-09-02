@@ -1,8 +1,12 @@
+package main.java.kbhelper;
+
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.LinkedList;
+
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -16,17 +20,14 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
-import components.queue.Queue;
-import components.queue.Queue1L;
-
-public class asteaDownGui extends JFrame implements ActionListener {
+public class AsteaDownGui extends JFrame implements ActionListener {
 	
 	private static final long serialVersionUID = 8863507308713007595L;
-	private final JPanel contentPane; 
-	private final JLabel requestTypeLabel;
+	private JPanel contentPane = null; 
+	private JLabel requestTypeLabel = null;
 	public final JComboBox<String> requestTypeBox = new JComboBox<String>();
-	private final JLabel recievedListLabel;
-	public final JTable recievedList;
+	private JLabel recievedListLabel = null;
+	public JTable recievedList = null;
 	public final JButton cancel = new JButton("Cancel");
 	public final JButton confirm = new JButton("Confirm");
 
@@ -34,7 +35,7 @@ public class asteaDownGui extends JFrame implements ActionListener {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					asteaDownGui frame = new asteaDownGui();
+					AsteaDownGui frame = new AsteaDownGui();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -43,10 +44,10 @@ public class asteaDownGui extends JFrame implements ActionListener {
 
 	}
 	
-	public asteaDownGui() {
+	public AsteaDownGui() {
 		setResizable(false);
 		setTitle("Astea is down!?");
-		setIconImage(Toolkit.getDefaultToolkit().getImage(gui.class.getResource("/images/logo.png")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(GUI.class.getResource("/images/logo.png")));
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 10, 350, 290);
 		contentPane = new JPanel();
@@ -154,9 +155,8 @@ public class asteaDownGui extends JFrame implements ActionListener {
 		return (String) this.requestTypeBox.getSelectedItem();
 	}
 	
-	public Queue<String> getRecievedList() {
-		
-		Queue<String> recievedList = new Queue1L<String>();
+	public LinkedList<String> getRecievedList() {
+		LinkedList<String> recievedList = new LinkedList<String>();
 		TableModel model = this.recievedList.getModel();
 		int rows = model.getRowCount();
 		for (int i = 0; i < rows; i++) {
@@ -168,7 +168,7 @@ public class asteaDownGui extends JFrame implements ActionListener {
 				}
 				catch (Exception e) { 
 				}
-				recievedList.enqueue(itemName);
+				recievedList.add(itemName);
 			}
 			catch(Exception e) {
 			}

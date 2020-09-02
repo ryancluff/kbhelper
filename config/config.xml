@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<kbhelperconfig>
+	<defaults>
+		<os name="windows" price="99.99"/>
+		<os name="os x" price="49.99"/>
+		<backupLabor price="99.99"/>
+		<hddDiscount price="10.00"/>
+		<drive size="1TB" price="50.00"/>
+		<drive size="500GB" price="30.00"/>
+		<av name="ESET Smart Security - 3Y" price="99.99"/>
+	</defaults>
+	<serviceList>
+		<service name="Password Removal" price="29.99"/>
+		<service name="RAM Upgrade" price="29.99"/>
+		<service name="Heatsink Upgrade" price="59.99"/>
+		<service name="HDD/SSD Upgrade" price="59.99"/>
+		<service name="Optical Drive Upgrade" price="49.99"/>
+		<service name="I/O card upgrade" price="49.99"/>
+		<service name="Power Supply Upgrade" price="59.99"/>
+		<service name="Motherboard/CPU Upgrade" price="79.99"/>
+		<service name="Battery Install Labor" price="49.99"/>
+		<service name="Create Restore Media" price="14.99"/>
+		<service name="Software Install 1 Title" price="39.99"/>
+		<service name="OS Update/Upgrade" price="29.99"/>
+		<service name="Flash Bios" price="29.99"/>
+		<service name="Keyboard Install" price="39.99"/>
+		<service name="Facilitation" price="25.00"/>
+		<service name="Expedited service" price="29.99"/>
+		<service name="Custom Build Fee" price="149.99"/>
+		<service name="2 Year Data Protection ($25.00 - $49.99 | 192880)" price="19.99" short="2 Year Data Protection" sku="192880"/>
+		<service name="2 Year Data Protection ($50.00 - $74.99 | 238170)" price="19.99" short="2 Year Data Protection" sku="238170"/>
+		<service name="2 Year Data Protection ($75.00 - $99.99 | 238288)" price="29.99" short="2 Year Data Protection" sku="238288"/>
+		<service name="FrestStart" price="149.99"/>
+		<service name="DTL Hard Drive Recovery Tier 1" price="449.99"/>
+		<service name="DTL Hard Drive Recovery Tier 2" price="699.99"/>
+		<service name="DTL Hard Drive Recovery Tier 3" price="999.99"/>
+		<service name="DTL Flash Recovery Tier 1" price="149.99"/>
+		<service name="DTL Flash Recovery Tier 1" price="149.99"/>
+	</serviceList>
+	<osList>
+		<os name="No OS Installed"/>
+		<os name="Windows 10"/>
+		<os name="Windows 8.1"/>
+		<os name="Windows 7"/>
+		<os name="Windows Vista"/>
+		<os name="Windows XP"/>
+		<os name="macOS 10.13 High Sierra"/>
+		<os name="macOS 10.12 Sierra"/>
+		<os name="OS X 10.11 El Capitan"/>
+		<os name="OS X 10.10 Yosemite"/>
+		<os name="OS X 10.9 Mavericks"/>
+		<os name="OS X 10.8 Mountain Lion"/>
+		<os name="OS X 10.7 Lion"/>
+		<os name="OS X 10.6 Snow Leopard"/>
+	</osList>
+	<blackList>
+		<person name="spencer"/>
+	</blackList>
+</kbhelperconfig>

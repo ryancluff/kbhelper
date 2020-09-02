@@ -1,3 +1,4 @@
+package main.java.kbhelper;
 
 public class Service implements Comparable<Service>{
 
