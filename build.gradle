@@ -1,0 +1,12 @@
+apply plugin: 'application'
+
+mainClassName = 'main.java.kbhelper.GUI'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    implementation 'com.google.code.gson:gson:2.8.6'
+    compile files('cls/')
+}
