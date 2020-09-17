@@ -1,3 +1,5 @@
+package main.java.kbhelper;
+
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -13,7 +15,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.List;
-import 
 
 import javax.swing.ComboBoxModel;
 import javax.swing.DefaultComboBoxModel;
@@ -35,6 +36,8 @@ import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
+
+import com.google.code.gson;
 
 // Created by Ryan Cluff
 
